@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://YOUR-RENDER-URL/api/$1"
+    },
+    {
+      "source": "/courses/(.*)",
+      "destination": "https://YOUR-RENDER-URL/courses/$1"
+    }
+  ]
+}
