@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://YOUR-RENDER-URL/api/$1"
+      "destination": "https://scorm-player-backend.onrender.com/api/$1"
     },
     {
       "source": "/courses/(.*)",
-      "destination": "https://YOUR-RENDER-URL/courses/$1"
+      "destination": "https://scorm-player-backend.onrender.com/courses/$1"
     }
   ]
 }
