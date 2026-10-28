@@ -1,0 +1,186 @@
+# SCORM Player
+
+A web-based SCORM Player built using React, Node.js, and Express. It allows users to upload SCORM ZIP files, extract the course contents, and play the course directly in the browser.
+
+## Features
+
+- Upload SCORM courses in ZIP format.
+- Extract SCORM ZIP files on the server.
+- Automatically identify the SCORM launch file from `imsmanifest.xml`.
+- Display uploaded course information.
+- Play SCORM courses inside an iframe.
+- Basic SCORM 2004 runtime API support.
+- Simple and user-friendly interface.
+- Support for uploading multiple courses.
+
+## Technologies Used
+
+### Frontend
+- React.js
+- Vite
+- JavaScript
+- CSS
+
+### Backend
+- Node.js
+- Express.js
+- Multer
+- AdmZip
+- CORS
+
+## Project Structure
+
+```text
+scorm-player/
+│
+├── public/
+│
+├── server/
+│   ├── uploads/
+│   └── server.cjs
+│
+├── src/
+│   ├── assets/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Prerequisites
+
+Before running the project, install the following:
+
+- Node.js
+- npm
+- Visual Studio Code
+- Google Chrome or another modern web browser
+
+## Installation
+
+### Step 1: Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+### Step 2: Navigate to the project directory
+
+```bash
+cd scorm-player
+```
+
+### Step 3: Install frontend dependencies
+
+```bash
+npm install
+```
+
+### Step 4: Install backend dependencies
+
+```bash
+npm install express multer adm-zip cors
+```
+
+### Step 5: Install ZIP extraction dependency
+
+```bash
+npm install jszip
+```
+
+## Running the Application
+
+The application requires two servers to run simultaneously.
+
+### Start the Backend Server
+
+Open a terminal in the project directory and run:
+
+```bash
+node server/server.cjs
+```
+
+The backend server will start at:
+
+```text
+http://localhost:5000
+```
+
+### Start the React Frontend
+
+Open another terminal in the project directory and run:
+
+```bash
+npm run dev
+```
+
+The frontend will start at:
+
+```text
+http://localhost:5173
+```
+
+Open the frontend URL in your browser.
+
+## How to Use
+
+1. Open the SCORM Player webpage.
+2. Click **Choose SCORM ZIP**.
+3. Select a SCORM course ZIP file from your computer.
+4. Click **Upload Course**.
+5. Wait until the course is uploaded and extracted.
+6. Review the course information.
+7. Click **Play Course**.
+8. The SCORM course will open inside the player.
+
+## SCORM Support
+
+The project is designed to support SCORM courses, including SCORM 2004 content.
+
+The player provides a basic SCORM 2004 API implementation using:
+
+```javascript
+window.API_1484_11
+```
+
+Common runtime methods include:
+
+- Initialize()
+- Terminate()
+- GetValue()
+- SetValue()
+- Commit()
+- GetLastError()
+- GetErrorString()
+- GetDiagnostic()
+
+The exact functionality depends on the SCORM course and its runtime requirements.
+
+## Important Notes
+
+- The course must contain a valid `imsmanifest.xml` file.
+- The launch file is identified using the manifest.
+- Some SCORM courses require additional LMS functionality.
+- This project currently provides a basic SCORM runtime, not a complete LMS.
+- Learner progress and course results are not yet stored in a permanent database.
+- Some courses may require additional runtime implementation to play correctly.
+
+## Future Improvements
+
+- Add user authentication.
+- Store learner progress in a database.
+- Implement complete SCORM 1.2 and SCORM 2004 runtime support.
+- Add course completion tracking.
+- Add quiz score tracking.
+- Add course history.
+- Add learner dashboard.
+- Improve responsive design.
+
+## License
+
+This project is developed for educational and learning purposes.
